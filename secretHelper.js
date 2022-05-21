@@ -13,6 +13,7 @@ const client = new SecretManagerServiceClient();
 async function accessSecretVersion() {
   const [version] = await client.accessSecretVersion({
     name: "TEST",
+    project_id: "hello-world-350920",
   });
 
   // Extract the payload as a string.
