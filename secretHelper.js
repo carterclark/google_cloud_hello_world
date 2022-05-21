@@ -10,9 +10,9 @@ const { SecretManagerServiceClient } = require("@google-cloud/secret-manager");
 // Instantiates a client
 const client = new SecretManagerServiceClient();
 
-async function accessSecretVersion() {
+async function accessSecretVersion(secret) {
   const [version] = await client.accessSecretVersion({
-    name: "projects/374953781280/secrets/TEST/versions/latest",
+    name: "projects/374953781280/secrets/" + secret + "/versions/latest",
   });
 
   // Extract the payload as a string.
@@ -20,7 +20,8 @@ async function accessSecretVersion() {
 
   // WARNING: Do not print the secret in a production environment - this
   // snippet is showing how to access the secret material.
-  console.log(`Payload: ${payload}`);
+  //   console.log(`Payload: ${payload}`);
+  return payload;
 }
 
 module.exports = { accessSecretVersion };

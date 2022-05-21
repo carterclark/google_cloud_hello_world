@@ -17,7 +17,7 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log("isRunningOnGoogleCloud: %s", isRunningOnGoogleCloud);
   if (isRunningOnGoogleCloud) {
-    secretHelper.accessSecretVersion();
+    console.log("secretHelper" + secretHelper.accessSecretVersion("TEST"));
   }
 });
 // [END gae_node_request_example]
