@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 const PORT = parseInt(process.env.PORT) || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
-  console.log("%s", process.env);
+  console.log("%s", process.env.GOOGLE_CLOUD_SHELL);
 });
 // [END gae_node_request_example]
 
