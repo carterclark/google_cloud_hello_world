@@ -2,6 +2,7 @@
 
 // [START gae_node_request_example]
 const express = require("express");
+const isRunningOnGoogleCloud = process.env.GOOGLE_CLOUD_SHELL !== undefined;
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.get("/", (req, res) => {
 const PORT = parseInt(process.env.PORT) || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
-  console.log("%s", process.env.GOOGLE_CLOUD_SHELL);
+  console.log("%s", isRunningOnGoogleCloud);
 });
 // [END gae_node_request_example]
 
